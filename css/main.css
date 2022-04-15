@@ -46,6 +46,9 @@ header {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr;
   flex-direction: row;
+  grid-template-areas:
+  "box1 box2 box3"
+  "     box2     ";
 }
 
 section ul {
@@ -60,7 +63,9 @@ section ul {
 }
 
 section ul li {
-  display: grid;
+  display: grid;  grid-template-areas:
+  "box1 box2"
+  "box3 box4";
   grid-template-columns: 1fr;
   border: 2px solid #afafaf;
   border-radius: 6px;
@@ -70,6 +75,7 @@ section ul li {
 }
 
 nav ul {
+  display: flex;
   font-family: PT Sans Narrow;
   list-style-type: none;
 }
@@ -81,6 +87,7 @@ nav ul li:first-of-type {
   grid-column: 1;
   margin: auto 1.5rem;
   padding: 1rem;
+
 }
 
 nav a {
@@ -103,6 +110,11 @@ p:first-of-type{
   margin: 0 0 auto;
 }
 
+section div {
+  display: flex;
+  flex-direction: row;
+}
+
 li div {
   display: flex;
   flex-direction: row;
@@ -118,12 +130,27 @@ li div strong {
 }
 
 div img {
-  width: 5%;
+  width: 1em;
+  height: 1em;
   order: -1;
 }
 
 footer {
   display: flex;
-  flex-direction: column;
   justify-content: space-between;
+  padding: 1rem;
+  font-size: .875rem;
 }
+
+/*
+header uses grid, grid-template areas
+- left center right
+- . center ."
+header h1 will use the grid-area,
+nav uses grid-cloumn and grid-rows
+nav ul uses display flex
+section ul - grid
+section li - grid-template-areas
+section div - display:flex;
+
+*/
