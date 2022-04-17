@@ -13,6 +13,11 @@ body {
   margin: 0;
 }
 
+header h1 {
+  grid-row: 2;
+  grid-area: box2;
+}
+
 h3 ~ img {
   width: 100%;
   grid-column: 1 / 2;
@@ -43,12 +48,9 @@ header {
   margin-bottom: 1.5rem;
   display: grid;
   padding: 0;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr;
   flex-direction: row;
   grid-template-areas:
-  "box1 box2 box3"
-  "     box2     ";
+  "box1 box2 box3";
 }
 
 section ul {
@@ -63,15 +65,16 @@ section ul {
 }
 
 section ul li {
-  display: grid;  grid-template-areas:
-  "box1 box2"
-  "box3 box4";
+  display: grid;
   grid-template-columns: 1fr;
   border: 2px solid #afafaf;
   border-radius: 6px;
   background-color:#ccc;
   padding: 0;
   margin: .5em;
+  grid-template-areas:
+  "box1 box2"
+  "box3 box4";
 }
 
 nav ul {
@@ -84,9 +87,10 @@ nav ul li:first-of-type {
   border: 2px solid #960062;
   border-radius: 6px;
   background-color: #bd027d;
-  grid-column: 1;
+  grid-column: 1 / 2;
   margin: auto 1.5rem;
   padding: 1rem;
+  grid-area: box1;
 
 }
 
@@ -102,6 +106,8 @@ nav ul li:last-of-type {
   background-color: #bd027d;
   margin: 1.5rem;
   padding: 1rem;
+  grid-column: 3 / 4;
+  grid-area: box3;
 }
 
 p:first-of-type{
