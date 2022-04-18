@@ -13,11 +13,6 @@ body {
   margin: 0;
 }
 
-header h1 {
-  grid-row: 2;
-  grid-area: box2;
-}
-
 h3 ~ img {
   width: 100%;
   grid-column: 1 / 2;
@@ -29,10 +24,13 @@ h3 {
   font-size: 1.25rem;
   background-color: #afafaf;
   padding: 1rem;
-  grid-row: 3 / 4;
-  grid-column: -2 / -1;
+  grid-row: 2;
   padding: 1.5rem 0;
   margin-bottom: .5em;
+}
+
+header h1 {
+  grid-area: box2;
 }
 
 h2 {
@@ -48,16 +46,14 @@ header {
   margin-bottom: 1.5rem;
   display: grid;
   padding: 0;
-  flex-direction: row;
   grid-template-areas:
-  "box1 box2 box3";
+  "box1 box2";
 }
 
 section ul {
   display: grid;
   padding: 0;
   margin: 0;
-  flex-direction: row;
   gap: 1rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -65,8 +61,6 @@ section ul {
 }
 
 section ul li {
-  display: grid;
-  grid-template-columns: 1fr;
   border: 2px solid #afafaf;
   border-radius: 6px;
   background-color:#ccc;
@@ -77,20 +71,24 @@ section ul li {
   "box3 box4";
 }
 
+nav {
+  grid-column: 1 / 2;
+  grid-row: 1;
+}
+
 nav ul {
   display: flex;
   font-family: PT Sans Narrow;
   list-style-type: none;
+  justify-content: space-between;
 }
 
-nav ul li:first-of-type {
+nav ul li {
   border: 2px solid #960062;
   border-radius: 6px;
   background-color: #bd027d;
-  grid-column: 1 / 2;
   margin: auto 1.5rem;
   padding: 1rem;
-  grid-area: box1;
 
 }
 
@@ -98,16 +96,6 @@ nav a {
   color: #fff;
   text-decoration: none;
   font-size: 1.25rem;
-}
-
-nav ul li:last-of-type {
-  border: 2px solid #960062;
-  border-radius: 6px;
-  background-color: #bd027d;
-  margin: 1.5rem;
-  padding: 1rem;
-  grid-column: 3 / 4;
-  grid-area: box3;
 }
 
 p:first-of-type{
@@ -122,9 +110,6 @@ section div {
 }
 
 li div {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   background-color: #afafaf;
   border-radius: 1em 0 0 1em;
   margin: .5em 0 0 1.5rem;
