@@ -15,8 +15,6 @@ body {
 
 h3 ~ img {
   width: 100%;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
 }
 
 h3 {
@@ -24,7 +22,6 @@ h3 {
   font-size: 1.25rem;
   background-color: #afafaf;
   padding: 1rem;
-  grid-row: 2;
   padding: 1.5rem 0;
   margin-bottom: .5em;
 }
@@ -33,21 +30,32 @@ header h1 {
   grid-area: box2;
 }
 
+
+h1 img {
+  width: 80%;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+}
+
 h2 {
   font-family: PT Sans Narrow;
 }
 
 main {
   padding: 1rem;
+  margin: .5em;
 }
 
 header {
   background-color: #bd027d;
   margin-bottom: 1.5rem;
+  grid-template-rows: [row1-start] 120px [row1-end];
+  grid-template-columns: repeat(3, 1fr);
   display: grid;
   padding: 0;
+  margin-bottom: 1.5rem;
   grid-template-areas:
-  "box1 box2";
+  "box1 box2 box3";
 }
 
 section ul {
@@ -71,25 +79,19 @@ section ul li {
   "box3 box4";
 }
 
-nav {
-  grid-column: 1 / 2;
-  grid-row: 1;
-}
-
 nav ul {
   display: flex;
   font-family: PT Sans Narrow;
   list-style-type: none;
   justify-content: space-between;
+  flex-direction: row;
 }
 
 nav ul li {
   border: 2px solid #960062;
   border-radius: 6px;
   background-color: #bd027d;
-  margin: auto 1.5rem;
   padding: 1rem;
-
 }
 
 nav a {
